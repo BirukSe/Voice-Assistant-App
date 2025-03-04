@@ -158,13 +158,12 @@ class _HomePageState extends State<HomePage> {
               await startListening();
             } else if (speechToText.isListening) {
               print('i am stoping listening');
-              lastWords = 'ሰላም፣ እንዴት ነህ?';
 
               Askgemini askgemini = Askgemini(prompt: lastWords);
               String response = await askgemini.network();
 
               print("Gemini Response: $response");
-              await playHTService.speak(response);
+              await flutterTts.speak(response);
               await stopListening();
             } else {
               initSpeechToText();
