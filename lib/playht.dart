@@ -3,8 +3,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 class AiVOOVService {
-  final String apiKey =
-      '75efd106-b296-433e-a799-192ca753bd93'; // Replace with your actual API key
+  final String apiKey = '75efd106-b296-433e-a799-192ca753bd93';
 
   Future<void> speak(String text) async {
     var url = Uri.parse('https://aivoov.com/api/v1/transcribe');
@@ -13,7 +12,7 @@ class AiVOOVService {
       ..headers.addAll({
         'X-API-KEY': apiKey,
       })
-      ..fields['voice_id'] = 'Ameha' // Replace with your desired voice ID
+      ..fields['voice_id'] = 'Ameha'
       ..fields['transcribe_text[]'] = text
       ..fields['engine'] = 'neural';
 
